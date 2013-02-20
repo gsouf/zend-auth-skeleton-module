@@ -1,0 +1,22 @@
+{% extends "layout/layout" %}
+
+{% block title %}
+    {{ headTitle("Login" ~ titleAppend) }}
+{% endblock %}
+
+
+
+{% block content %}
+        
+    {% do form.prepare() %}
+
+    
+    {{ form().openTag(form)|raw }}
+
+    <label>Email</label>{{ formRow(form.get('email')) | raw  }}
+    <label>Password</label>{{ formRow(form.get('password')) | raw  }}
+    {{ formSubmit(form.get('submit')) | raw  }}
+    {{ form().closeTag(form)|raw }}
+
+
+{% endblock %}
